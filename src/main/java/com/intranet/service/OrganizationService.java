@@ -19,5 +19,16 @@ public class OrganizationService {
 		// TODO Auto-generated method stub
 		return organizationdao.getdataOrganization();
 	}
+	public int organizationDeleteByid(String id) {
+	
+		return organizationdao.organizationDeleteByid(id);
+	}
+
+	public int organizationEditByid(String id, String organizationName) {
+		
+		System.out.println("service :::::::::::"+id);
+		
+		return organizationdao.organizationEditByid(id,organizationName);
+	}
 
 }

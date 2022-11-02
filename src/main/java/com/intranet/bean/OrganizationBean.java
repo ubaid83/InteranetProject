@@ -2,13 +2,19 @@ package com.intranet.bean;
 
 public class OrganizationBean {
 
-	
+	private String id ;
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	private String organizationName;
 	
     private String createdDate;
     
-
- 
 	public String getCreatedDate() {
 		return createdDate;
 	}
@@ -27,7 +33,8 @@ public class OrganizationBean {
 
 	@Override
 	public String toString() {
-		return "OrganizationBean [organizationName=" + organizationName + ", createdDate=" + createdDate + "]";
+		return "OrganizationBean [id=" + id + ", organizationName=" + organizationName + ", createdDate=" + createdDate
+				+ "]";
 	}
 
 

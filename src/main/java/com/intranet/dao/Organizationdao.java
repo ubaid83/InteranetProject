@@ -18,8 +18,21 @@ public class Organizationdao {
 		return jdbctemplet.update(sql,organizationBean.getOrganizationName());
 	}
 	public List<OrganizationBean> getdataOrganization() {
-		String sql ="SELECT * FROM organization";
+		String sql ="SELECT organizationName,id,createdDate FROM organization where active ='Y' ";
 		return jdbctemplet.query(sql, new BeanPropertyRowMapper(OrganizationBean.class));
 	}
+	public int organizationDeleteByid(String id) {
+		System.out.println("dao ;;;;;;;;;;;;;"+id );
+		String sql ="UPDATE organization SET active ='N' where id =? ";
+		return jdbctemplet.update(sql,id);
+	}
+	
+	public int organizationEditByid(String id, String organizationName) {
+		System.out.println("organizationName Daooooooo::::::"+organizationName);
+		
+		System.out.println("Update the data "+ id);
+		 String sql ="UPDATE organization SET organizationName =? where id =?";
 
+		return jdbctemplet.update(sql, new Object[] {organizationName, id});
+	}
 }
